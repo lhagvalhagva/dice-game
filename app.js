@@ -12,7 +12,7 @@ var roundScore = 0;
 
 //Shoonii ali talaaraa buusniiig hadgalah huwisagch , 1-6 hurtel utgiig sanamsargvi baidlaar awah  
 
-var dice = Math.floor(Math.random() * 6) +1;
+var diceNumber = Math.floor(Math.random() * 6) +1;
 
 // DOM <div class="player-score" id="score-0">43</div>
 
@@ -21,13 +21,20 @@ var dice = Math.floor(Math.random() * 6) +1;
 
 
 // Program ehlehed beltgy 
-document.querySelector('#score-0').textContent = 0;
-document.querySelector('#score-1').textContent = 0;
 
-document.querySelector('#current-1').textContent = 0;
-document.querySelector('#current-0').textContent = 0;
+document.getElementById("score-0").textContent = 0;
+document.getElementById('score-1').textContent = 0  ;
 
-document.querySelector('.dice').style.display = 'none';
+document.getElementById('current-1').textContent = 0;
+document.getElementById('current-0').textContent = 0;
 
+// document.querySelector('.dice').style.display = 'none';
+var diceDom = document.querySelector(".dice");
 
-console.log("Шоо : " + dice);
+document.querySelector('.btn-roll').addEventListener('click', function (){
+    var diceNumber = Math.floor(Math.random() * 6) +1;
+
+    diceDom.style.display = 'block';
+    diceDom.src= 'dice-' + diceNumber +'.png';
+
+});
